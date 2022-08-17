@@ -1,24 +1,55 @@
-# README
+# Blog app
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The Blog app will be a classic example of a blog website. it's fully functional website that will show the list of posts and empower readers to interact with them by adding comments and liking posts.
 
-Things you may want to cover:
 
-* Ruby version
 
-* System dependencies
+## Built With
 
-* Configuration
+- Ruby on Rails
 
-* Database creation
+## Development set up
 
-* Database initialization
+Clone Repository using
 
-* How to run the test suite
+`git clone git@github.com:Gedewon/BlogApp.git`
 
-* Services (job queues, cache servers, search engines, etc.)
+Or using HTTPS
 
-* Deployment instructions
+`git clone https://github.com/Gedewon/BlogApp.git`
 
-* ...
+Move into project directory
+
+`cd BlogApp`
+
+## Available Scripts
+
+`bundle install`
+`rails server`
+
+## Available Scripts to Run Test cases
+
+> Run following command
+> ` gem install --no-document rspec -v '>=3.0, < 4.0'` > `rspec --force-color --format documentation`
+
+## Author
+
+👤 **Gedewon**
+
+- GitHub: [@gedewon](https://github.com/gedewon)
+- Twitter: [@gedewon](https://twitter.com/gedi_haile)
+- LinkedIn: [@gedewon](https://linkedin.com/in/gedewon)
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](https://github.com/Gedewon/BlogApp/issues).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## 📝 License
+
+This project is [MIT](https://github.com/Gedewon/BlogApp/blob/dev/LICENCE) licensed.
