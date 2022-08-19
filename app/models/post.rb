@@ -11,4 +11,8 @@ class Post < ApplicationRecord
     user.postscounter += 1
     user.save
   end
+
+  def most_recent_post
+    Comment.where(user: self).order(created_at: :desc).limit(5)
+  end
 end
