@@ -36,6 +36,5 @@ RSpec.describe Post, type: :model do
       @post.save
       expect(@post.author.postscounter).to be > 0
     end
-
   end
 end
