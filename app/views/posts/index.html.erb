@@ -1,2 +1,20 @@
 <h1>Posts</h1>
 <p>Here is a list postes for specific users</p>
+<h1><%= @user.name %></h1>
+<p>Number of posts:<%=@user.postscounter %></p> <br>
+<% @posts.each do  |post| %>
+    <div>
+      <%= link_to user_post_path(user_id: @user.id , id:post.id) do %>
+      <h3>Post #<%= post.id %> <%= post.title%> </h3>
+      <% end %>
+      <p><%= post.text %></p>
+      <span>Comments:<%= post.comments_counter%>,</span>
+      <span>Likes:<%= post.likes_counter%>,</span>
+    </div>
+    <div>
+      <% post.comments.each do |comment| %>
+         <p><%=comment.user.name %>:<%= comment.text %></p>
+      <% end %>
+    </div>
+    <br>
+<% end %>
