@@ -1,0 +1,17 @@
+<div id="newPostTemplate">
+<h1>New Post </h1>
+<div id="singleUser">
+        <img src="<%= @user.photo%>" alt="photo"/>
+      <div id="userInfo">
+        <h3><%= link_to @user.name, user_path(@user)  %></h3>
+        <label >Number of posts: <%= @user.postscounter %><label/>
+      </div>
+ </div>
+ <%= form_with model: @post, url: user_posts_path do |f| %>
+      <%= f.label :title %><br>
+      <%= f.text_field :title %><br>
+      <%= f.label :text %><br>
+      <%= f.text_area :text %><br>
+      <%= f.submit "Create Post" %>
+    <% end %>
+<div>

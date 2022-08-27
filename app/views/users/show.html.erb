@@ -14,3 +14,4 @@
 <% end %>
 <br>
 <%= button_to "See all posts", user_posts_path(@user.id), method:'get'%>
+<%= button_to link_to "New Post", new_user_post_path(@user)%>

@@ -11,4 +11,6 @@
           <p><%= comment.user.name%> : <%= comment.text %>
        <% end %>
      </div>
+     <%= button_to link_to "New Comment", new_user_post_comment_path(user_id: @user.id, post_id:@post.id) %>
+     <%= button_to "Add Likes", user_post_likes_path(@user, @post), params: { like: { user_id: @user.id, post_id: @post.id}}%>
 </div>
