@@ -1,9 +1,10 @@
 <% @users.each  do |user| %>
-<div>
-<%= link_to  user  do %>
-<h2><%= user.name %></h2>
-<% end %>
-<span>Number of posts: <%= user.postscounter %></span>
-</div> <br>
+  <div>
+    <img src="<%= user.photo%>" alt="photo"/>
+  <%= link_to  user  do %>
+  <h2><%= user.name %></h2>
+  <% end %>
+  <span>Number of posts: <%= user.postscounter %></span>
+  </div> <br>
 
 <% end %>
