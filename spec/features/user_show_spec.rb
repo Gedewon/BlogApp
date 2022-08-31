@@ -21,24 +21,26 @@ RSpec.describe 'User pages functionality : user show page' do
     expect(page).to have_text(user.name)
   end
 
-  it 'I can see the number of posts the user has written.' do
+   it 'I can see the number of posts the user has written.' do
     expect(page).to have_content(/posts:[\d+]/i)
   end
 
   it "I can see the user's bio." do
-    expect(page).to have_content(/#{user.bio}/i)
+      expect(page).to have_content(/#{user.bio}/i)
   end
 
-  it "I can see a button that lets me view all of a user's posts." do
-    expect(page).to have_text(/See all posts/i)
-  end
+   it "I can see a button that lets me view all of a user's posts." do
+      expect(page).to have_text(/See all posts/i)
+    end
+   
 
   it "When I click a user's post, it redirects me to that post's show page." do
     visit user_posts_path(user)
     within 'div#postlink' do
-      click_link
-      expect(page).to have_current_path(user_post_path(user, p1))
+       click_link
+        expect(page).to have_current_path(user_post_path(user, p1))
     end
+   
   end
 
   it "When I click to see all posts, it redirects me to the user's post's index page" do
@@ -47,3 +49,4 @@ RSpec.describe 'User pages functionality : user show page' do
     expect(page).to have_current_path(user_posts_path(user))
   end
 end
+
