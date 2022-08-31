@@ -9,9 +9,7 @@ RSpec.describe 'User post show page', type: :system do
                               comments_counter: 0, likes_counter: 0)
     @first_comment = Comment.create(post_id: @first_post.id, user_id: @first_user.id,
                                     text: 'This is my first comment')
-    # @first_comment.update_post_comment_counter
     @first_like = Like.create(post_id: @first_post.id, user_id: @first_user.id)
-    # @first_like.update_post_like_counter
   end
 
   it "I can see the post's title." do
