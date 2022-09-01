@@ -13,6 +13,4 @@ class UsersController < ApplicationController
       @posts = @user.most_recent_post
     end
   end
-
-
 end
