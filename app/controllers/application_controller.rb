@@ -5,6 +5,11 @@ class ApplicationController < ActionController::Base
 
   protected
 
+  def after_inactive_sign_up_path_for(_resource)
+    flash[:success] = 'Please welcome !'
+    new_user_session_path
+  end
+
   def update_allowed_parameters
     devise_parameter_sanitizer.permit(:sign_up) do |u|
       u.permit(:name, :photo, :email, :password, :password_confirmation, :postscounter, :bio)
