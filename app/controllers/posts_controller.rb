@@ -26,16 +26,24 @@ class PostsController < ApplicationController
 
   def create
     parameters = post_params
-    post = Post.new(user_id: current_user.id, title: parameters[:title], text: parameters[:text], comments_counter: 0,
-                    likes_counter: 0)
-    post.save
-    # post.update_posts_counter
-    if post.save
-      # puts "Saved successfully"
-      redirect_to user_path(current_user)
-    else
-      # puts "Failed to save"
-      redirect_to new_user_post_path
+    respond_to do |format|
+      format.json do
+        authenticate_request
+        post = Post.new(user_id: current_user.id, title: parameters[:title], text: parameters[:text],
+                        comments_counter: 0,
+                        likes_counter: 0)
+        render json: "New Post created by #{current_user.name}" if post.save
+      end
+      format.html do
+        post = Post.new(user_id: current_user.id, title: parameters[:title], text: parameters[:text],
+                        comments_counter: 0,
+                        likes_counter: 0)
+        if post.save
+          redirect_to user_path(current_user)
+        else
+          redirect_to new_user_post_path
+        end
+      end
     end
   end
 
