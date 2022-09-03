@@ -16,6 +16,24 @@ class CommentsController < ApplicationController
     else
       redirect_to new_user_post_comment
     end
+
+    respond_to do |format|
+      format.json do
+        authenticate_request
+        comment = Comment.new(post_id: params[:post_id], user_id: current_user.id, text: parameters[:text])
+        comment.save
+        render json: "New Comment Added By #{current_user.name}"
+      end
+      format.html do
+        comment = Comment.new(post_id: params[:post_id], user_id: current_user.id, text: parameters[:text])
+        comment.save
+        if comment.save
+          redirect_to user_post_path(id: params[:post_id])
+        else
+          redirect_to new_user_post_comment
+        end
+      end
+    end
   end
 
   def comment_params

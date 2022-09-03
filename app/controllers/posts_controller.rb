@@ -14,8 +14,8 @@ class PostsController < ApplicationController
     @user = current_user
 
     respond_to do |format|
-     format.html
-     format.json { render json: @post.comments }
+      format.html
+      format.json { render json: @post.comments }
     end
   end
 
