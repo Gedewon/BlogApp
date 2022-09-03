@@ -12,6 +12,11 @@ class PostsController < ApplicationController
   def show
     @post = Post.includes(:comments, :user).find_by(user_id: params[:user_id], id: params[:id])
     @user = current_user
+
+    respond_to do |format|
+     format.html
+     format.json { render json: @post.comments }
+    end
   end
 
   def new
