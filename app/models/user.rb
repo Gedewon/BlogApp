@@ -14,7 +14,12 @@ class User < ApplicationRecord
     Post.where(user: self).order(created_at: :desc).limit(3)
   end
 
+
+  def authenticate(pwd)
+    password == pwd
+  end
   def is?(requested_role)
     self.role = requested_role.to_s
+
   end
 end
