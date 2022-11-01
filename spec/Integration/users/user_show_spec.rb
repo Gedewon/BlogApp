@@ -10,9 +10,9 @@ RSpec.describe 'User pages functionality : user show page' do
     Post.create(user_id: user.id, title: 'Post test', text: 'Yes its just a test',
                 comments_counter: 0, likes_counter: 0)
     Post.create(user_id: user.id, title: 'Post test 2', text: 'Yes its just a test',
-        comments_counter: 0, likes_counter: 0)
+                comments_counter: 0, likes_counter: 0)
     Post.create(user_id: user.id, title: 'Post test 3', text: 'Yes its just a test',
-        comments_counter: 0, likes_counter: 0)
+                comments_counter: 0, likes_counter: 0)
   end
 
   before(:each) do
@@ -51,7 +51,7 @@ RSpec.describe 'User pages functionality : user show page' do
     expect(page).to have_current_path(user_posts_path(user))
   end
 
-  it 'shows the user first 3 posts' do 
-    expect(page.body).to include("Yes its just a test",count:3)
+  it 'shows the user first 3 posts' do
+    expect(page.body).to include('Yes its just a test', count: 3)
   end
 end
