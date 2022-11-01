@@ -4,7 +4,7 @@
 <h1><%= @user.name %></h1>
 <p>Number of posts:<%=@user.postscounter %></p> <br>
 <% @posts.each do  |post| %>
-    <div>
+    <div id="postlink">
       <%= link_to user_post_path(user_id: @user.id , id:post.id) do %>
       <h3>Post #<%= post.id %> <%= post.title%> </h3>
       <% end %>
@@ -12,6 +12,9 @@
       <span>Comments:<%= post.comments_counter%>,</span>
       <span>Likes:<%= post.likes_counter%>,</span>
     </div>
+    <% if can? :destroy, post %>
+      <%= button_to "Delete", user_post_path(@user, post), method: :delete %>
+   <% end %>
     <div>
       <% post.comments.each do |comment| %>
          <p><%=comment.user.name %>:<%= comment.text %></p>

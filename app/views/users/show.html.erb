@@ -1,4 +1,5 @@
 <h1><%= @user.name %></h1>
+<img src="https://media.istockphoto.com/vectors/default-profile-picture-avatar-photo-placeholder-vector-illustration-vector-id1223671392?k=20&m=1223671392&s=612x612&w=0&h=lGpj2vWAI3WUT1JeJWm1PRoHT3V15_1pdcTn2szdwQ0=" alt="photo"/>
 <p>Number of posts:<%=@user.postscounter %></p> <br>
 <div>
 <p>Bio</p>
@@ -7,8 +8,8 @@
 <% @posts.each do |post| %>
   <div>
     <h3>Post #<%= post.id %> <%= post.title%> </h3>
-    <p><%= post.text %></p>
-        <span>Comments:<%= post.comments_counter || 0%>,</span>
+    <p><%= link_to post.text.truncate(12), user_post_path(@user,post) %></p>
+    <span>Comments:<%= post.comments_counter || 0%>,</span>
     <span>Likes:<%= post.likes_counter || 0%>,</span>
   </div>
 <% end %>

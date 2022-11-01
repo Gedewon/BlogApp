@@ -37,8 +37,10 @@ Move into project directory
 👤 **Gedewon**
 
 - GitHub: [@gedewon](https://github.com/gedewon)
-- Twitter: [@gedewon](https://twitter.com/gedi_haile)
-- LinkedIn: [@gedewon](https://linkedin.com/in/gedewon)
+
+👤 **Issac**
+
+- GitHub: [@gedewon](https://github.com/kinginthenorthcodez)
 
 ## 🤝 Contributing
 
