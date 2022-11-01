@@ -1,4 +1,3 @@
-
 require 'rails_helper'
 
 RSpec.describe 'User pages functionality: User index page ', type: :feature do
@@ -42,4 +41,3 @@ RSpec.describe 'User pages functionality: User index page ', type: :feature do
     expect(page).to have_current_path(user_path(user))
   end
 end
-

@@ -50,4 +50,3 @@ RSpec.describe 'User post show page', type: :system do
     expect(page).to have_content(@first_comment.text)
   end
 end
-
