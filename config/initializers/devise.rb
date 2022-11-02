@@ -16,6 +16,7 @@ Devise.setup do |config|
   # by default. You can change it below and use your own secret key.
   # config.secret_key = 'f50523a0e720d6e4400a2cba092d9806bfcb26ab152c1eeec1c49196ec99be34c760d28dc673618a1022a44a4bbbf31a7ec7eae2db2ba1ae235cf8176db92ec8'
 
+
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
   # config.parent_controller = 'DeviseController'
@@ -127,6 +128,7 @@ Devise.setup do |config|
 
   # Set up a pepper to generate the hashed password.
   # config.pepper = '5ba27ccd0c5ef4cc9c7f1aa97950c10b982f6402f051179e1a22321fbad6b7fda513877e5a002899b68ab37bd4b4c510645b141a1f2003eafbeb1606f3e79f05'
+
 
   # Send a notification to the original email when the user's email is changed.
   # config.send_email_changed_notification = false
@@ -263,7 +265,9 @@ Devise.setup do |config|
   # should add them to the navigational formats lists.
   #
   # The "*/*" below is required to match Internet Explorer requests.
-  # config.navigational_formats = ['*/*', :html]
+
+  config.navigational_formats = ['*/*', :html,:turbo_stream]
+
 
   # The default HTTP method used to sign out a resource. Default is :delete.
   config.sign_out_via = :delete
